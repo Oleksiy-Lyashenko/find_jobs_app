@@ -1,0 +1,370 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Roboto:wght@400;500;700&display=swap');
+
+@import 'variables';
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  font-family: 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f2f3f4;
+  box-sizing: border-box;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+.wrapper {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.header {
+  padding-top: 32px;
+  display: flex;
+  flex-direction: column;
+
+  margin-bottom: 42px;
+
+  &__logo {
+    color: $logoColor;
+    font-size: 24px;
+    line-height: 36px;
+
+    margin-bottom: 32px;
+
+    &__first {
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 36px;
+    }
+
+    &__second {
+      font-weight: 300;
+    }
+  }
+
+  &__search {
+    width: 100%;
+    height: 140px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-image: url('../assets/backgroundImg.png');
+    background-position: center;
+    object-fit: contain;
+
+    border-radius: 8px;
+  }
+
+  &__container-input {
+    display: flex;
+    position: relative;
+    max-width: 790px;
+    width: 100%;
+  }
+
+  &__input {
+    width: 100%;
+    height: 50px;
+    padding-left: 42px;
+
+    border-radius: 4px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+    border: none;
+
+    outline: none;
+
+    &::placeholder {
+      font-family: 'Roboto';
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 14px;
+      color: $pageColor;
+    }
+  }
+
+  &__bag-img {
+    position: absolute;
+    left: 17px;
+    top: 17px;
+    width: 18px;
+
+    filter: $iconColor;
+  }
+
+  &__button {
+    position: absolute;
+    right: 3px;
+    top: 3px;
+    height: 90%;
+    padding: 0 48px;
+
+    border-radius: 4px;
+    border: none;
+    background-color: $blueColor;
+
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 19px;
+    color: #ffffff;
+
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.85;
+    }
+  }
+}
+
+.main {
+  display: flex;
+  column-gap: 32px;
+
+  &__filters {
+    max-width: 380px;
+    width: 100%;
+  }
+
+  &__vacations {
+    width: 100%;
+  }
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  margin-bottom: 32px;
+
+  &__title {
+    margin-top: 3px;
+
+    font-family: 'Poppins';
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 21px;
+    color: $darkBlueColor;
+  }
+}
+
+.checkbox-type {
+  position: relative;
+  width: 18px;
+  height: 18px;
+  appearance: none;
+  margin-right: 12px;
+
+  border: 1px solid $pageColor;
+  border-radius: 2px;
+  background-color: transparent;
+
+  &:checked {
+    border: 1px solid $blueColor;
+  }
+
+  &:checked::before {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    content: '';
+    background-color: $blueColor;
+    width: 12px;
+    height: 12px;
+  }
+}
+
+.location {
+  &__title {
+    margin: 0;
+    margin-bottom: 14px;
+
+    font-family: Poppins;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 21px;
+
+    text-transform: uppercase;
+    color: $pageColor;
+  }
+
+  &__search {
+    position: relative;
+    margin-bottom: 26px;
+  }
+
+  &__input {
+    box-sizing: border-box;
+    width: 100%;
+    height: 45px;
+    padding-left: 45px;
+    outline: none;
+
+    border: none;
+    background: $whiteColor;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
+    border-radius: 4px;
+
+    &::placeholder {
+      font-family: 'Roboto';
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 14px;
+      color: $pageColor;
+    }
+  }
+
+  &__img {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    filter: $iconColor;
+  }
+
+  &__list {
+    list-style: none;
+    margin: 0;
+    padding-left: 10px;
+  }
+
+  &__item {
+    margin-bottom: 18px;
+
+    &:nth-last-child(1) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__city {
+    display: flex;
+    align-items: center;
+  }
+
+  &__checkbox {
+    position: relative;
+    width: 18px;
+    height: 18px;
+    margin-right: 12px;
+    appearance: none;
+
+    border-radius: 50%;
+    border: 1px solid $pageColor;
+
+    &:checked {
+      border: 1px solid $blueColor;
+    }
+
+    &:checked::before {
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      content: '';
+
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background-color: $blueColor;
+    }
+  }
+}
+
+.vacation-box {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 12px;
+  display: flex;
+
+  margin-bottom: 32px;
+
+  &:nth-last-child(1) {
+    margin-bottom: 0;
+  }
+
+  background-color: $whiteColor;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+
+  &__img {
+    width: 90px;
+    height: 90px;
+    margin-right: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: $grayColor;
+    border-radius: inherit;
+
+    font-family: 'Roboto';
+    font-weight: 500;
+    font-size: 12px;
+
+    color: #bdbdbd;
+  }
+
+  &__information {
+    width: 100%;
+    font-family: 'Roboto';
+    color: $darkBlueColor;
+  }
+
+  &__company {
+    margin: 0;
+    margin-bottom: 8px;
+
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 14px;
+  }
+
+  &__position {
+    margin: 0;
+    margin-bottom: 12px;
+
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__full-time {
+    padding: 6px 8px;
+
+    border: 1px solid $darkBlueColor;
+    border-radius: 4px;
+
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 14px;
+    color: $darkBlueColor;
+  }
+
+  &__location {
+    display: flex;
+    column-gap: 28px;
+  }
+
+  &__city {
+    display: flex;
+    align-items: center;
+
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+    color: $pageColor;
+  }
+
+  &__icon {
+    filter: $iconColor;
+    margin-right: 6px;
+  }
+}
